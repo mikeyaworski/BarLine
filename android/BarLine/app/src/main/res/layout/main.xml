@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.fluxuous.barline.Main"
+    android:background="@color/backgroundColor" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/body"
+        android:layout_below="@+id/header">
+
+        <!-- android:background="@drawable/blue_button"
+            android:textColor="@color/fontColor" -->
+        <!-- Tokens -->
+        <!--
+        <Button
+            android:id="@+id/btnRedeem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="16dp"
+            android:text="Redeem Code"
+            android:textAllCaps="false"
+            android:theme="@style/MainButton"
+            android:onClick="redeem"
+            android:textSize="24sp"/>-->
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+
+        android:layout_above="@+id/lblTitle"
+        android:layout_marginBottom="-20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+
+        android:id="@+id/logo"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Bar Line"
+        android:id="@+id/lblTitle"
+        android:textSize="46sp"
+        android:textColor="@color/primaryText"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="search"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:id="@+id/btnSearchLayout"
+        android:addStatesFromChildren="true"
+        android:background="@drawable/main_button">
+
+        <Button
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:background="@null"
+            android:textSize="26sp"
+            android:onClick="search"
+            android:id="@+id/btnSearch"
+            android:textColor="@color/primaryText"
+            android:padding="15dp"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:layout_height="64dp" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btnSearchLayout"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/loadingAnimation" />
+
+</RelativeLayout>

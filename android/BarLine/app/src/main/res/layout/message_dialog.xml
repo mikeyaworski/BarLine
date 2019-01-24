@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:theme="@style/AppTheme.NoActionBar"
+    android:background="@color/backgroundColor" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/primaryText"
+            android:textSize="26sp"
+            android:id="@+id/lblTitle"
+            android:text="Title"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lblTitle"
+            android:textColor="@color/primaryText"
+            android:textSize="20sp"
+            android:id="@+id/lblMessage"
+            android:text="Longer message Longer messageLonger message Longer message Longer message"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>

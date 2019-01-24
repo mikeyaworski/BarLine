@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Bar Line</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="description">Check the length of the bar lines near you.</string>
+
+    <string name="title_activity_select_city">Select City</string>
+    <string name="title_activity_select_bars">Select Bars</string>
+    <string name="title_activity_wait_time">Wait Time</string>
+    <string name="title_activity_edit">Edit</string>
+    <string name="title_activity_ad">Bar Promotion</string>
+
+    <string name="event_details"><u>Event Details</u></string>
+
+    <string name="no_internet_message">No internet connection.</string>
+    <string name="generic_error_message">Something went wrong.</string>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fluxuous.barline">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--<uses-permission android:name="com.android.vending.BILLING" />-->
+
+    <!-- android:name is to implement Application subclass, used for getting the GoogleAnalytics tracker -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_edited"
+        android:name="BarLine"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Main"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SelectCity"
+            android:label="@string/title_activity_select_city"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SelectBars"
+            android:label="@string/title_activity_select_bars"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WaitTime"
+            android:label="@string/title_activity_wait_time"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Edit"
+            android:label="@string/title_activity_edit"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Ad"
+            android:label="@string/title_activity_ad"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppDialogThemeNoActionBar" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="TODO put in a string file" />
+    </application>
+
+</manifest>

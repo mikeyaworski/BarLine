@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:theme="@style/AppTheme.NoActionBar"
+    android:background="@color/backgroundColor" >
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/password"
+        android:hint="Password"
+        android:textColorHint="@color/primaryText"
+        android:textColor="@color/primaryText"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="16dp"
+        android:text="Submit"
+        android:background="@drawable/main_button"
+        android:textColor="@color/primaryText"
+        android:textAllCaps="false"
+        android:textSize="18sp"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:id="@+id/loadingAnimation"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnSubmit" />
+
+</RelativeLayout>

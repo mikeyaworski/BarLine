@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fluxuous.barline.Edit"
+    android:background="@color/backgroundColor" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRefresh"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="refresh"
+            android:theme="@style/NavBarButton"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="15dp"
+            android:minWidth="0dp"
+            android:src="@mipmap/ic_action_refresh"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:text="Bar Name"
+            android:id="@+id/lblBarName"
+            android:textColor="@color/primaryText"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryText"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Wait Time Edit"
+            android:id="@+id/lblTitle"
+            android:layout_below="@+id/lblBarName"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/header"
+        android:layout_marginTop="10dp"
+        android:id="@+id/circularProgressBarsLayout">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/waitTimeProgressLayout">
+
+            <TextView
+                android:id="@+id/lblWaitTime"
+                android:layout_centerHorizontal="true"
+                android:text="Wait Time"
+                android:textColor="@color/primaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblWaitTime"
+                android:layout_centerHorizontal="true">
+
+                <com.fluxuous.barline.CircleProgressBar
+                    android:id="@+id/circularProgressBarWaitTime"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="10dp"
+
+                    app:progressbarColor="@color/colorPrimary"
+                    app:progress="0"
+                    app:max="60"
+                    app:progressBarThickness="6dp"/>
+
+                <TextView
+                    android:id="@+id/lblWaitTimeProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="22sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/waitTimeProgressLayout"
+            android:layout_marginLeft="30dp">
+
+            <TextView
+                android:id="@+id/lblCrowdingLevel"
+                android:layout_centerHorizontal="true"
+                android:text="Crowding Level"
+                android:textColor="@color/primaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblCrowdingLevel"
+                android:layout_centerHorizontal="true">
+
+                <com.fluxuous.barline.CircleProgressBar
+                    android:id="@+id/circularProgressBarCrowdingLevel"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="10dp"
+
+                    app:progressbarColor="@color/colorPrimary"
+                    app:progress="0"
+                    app:max="100"
+                    app:progressBarThickness="6dp"/>
+
+                <TextView
+                    android:id="@+id/lblCrowdingLevelProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaryText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="22sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:id="@+id/loadingAnimation"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <!-- Wait Time -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Wait Time"
+        android:layout_below="@+id/circularProgressBarsLayout"
+        android:textColor="@color/primaryText"
+        android:id="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <SeekBar
+        android:id="@+id/waitTimeProgress"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/textView3"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:max="12"
+        android:progress="0"
+        android:secondaryProgress="0" />
+
+    <!-- Crowding Level -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Crowding Level"
+        android:layout_below="@+id/waitTimeProgress"
+        android:textColor="@color/primaryText"
+        android:id="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+    <SeekBar
+        android:id="@+id/crowdingLevelProgress"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/textView4"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:max="20"
+        android:progress="0"
+        android:secondaryProgress="0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Last updated: "
+        android:id="@+id/lblLastUpdated"
+        android:layout_above="@+id/btnSave"
+        android:textColor="@color/secondaryText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSave"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:onClick="save"
+        android:src="@drawable/ic_checkmark_holo_light"
+        android:background="@drawable/save_button"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

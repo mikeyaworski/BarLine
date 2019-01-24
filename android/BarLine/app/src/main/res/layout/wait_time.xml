@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".WaitTime"
+    android:background="@color/backgroundColor" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnRefresh"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:theme="@style/NavBarButton"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="15dp"
+                android:minWidth="0dp"
+                android:onClick="refresh"
+                android:src="@mipmap/ic_action_refresh"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnEdit"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:theme="@style/NavBarButton"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="15dp"
+                android:minWidth="0dp"
+                android:onClick="edit"
+                android:src="@drawable/ic_menu_edit"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryText"
+                android:textSize="28sp"
+                android:text="Bar Name"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/btnRefresh"
+                android:layout_toLeftOf="@+id/btnEdit"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/lblBarName"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondaryText"
+                android:textSize="22sp"
+                android:text="Wait Time"
+                android:id="@+id/lblTitle"
+                android:layout_below="@+id/lblBarName"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryText"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Current Time"
+            android:layout_below="@+id/header"
+            android:id="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryText"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="12:00 am"
+            android:layout_below="@+id/textView2"
+            android:id="@+id/lblCurrentTime"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBarLayout"
+            android:layout_below="@id/lblCurrentTime"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true">
+
+            <com.fluxuous.barline.CircleProgressBar
+                android:id="@+id/circularProgressBar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+
+                app:progressbarColor="@color/colorPrimary"
+                app:progress="0"
+                app:max="60"
+                app:progressBarThickness="6dp"/>
+
+            <TextView
+                android:id="@+id/lblProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/primaryText"
+                android:text=""
+                android:textSize="32sp" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                android:id="@+id/loadingAnimation"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/progressBarLayout"
+            android:id="@+id/buttonsSection">
+
+            <Button
+                android:id="@+id/btnShowWaitTimeSelected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Wait Time"
+                android:textAllCaps="false"
+                android:theme="@style/TabButtonSelected"
+                android:background="@drawable/button_tab_selected"
+                android:onClick="showWaitTime"
+                android:textSize="28sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp" />
+            <Button
+                android:id="@+id/btnShowWaitTimeNotSelected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Wait Time"
+                android:background="@drawable/button_tab_unselected"
+                android:textAllCaps="false"
+                android:theme="@style/TabButtonNotSelected"
+                android:onClick="showWaitTime"
+                android:textSize="28sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="0dp" />
+            <Button
+                android:id="@+id/btnShowCrowdingLevelSelected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Crowding"
+                android:layout_toRightOf="@id/btnShowWaitTimeNotSelected"
+                android:textAllCaps="false"
+                android:theme="@style/TabButtonSelected"
+                android:background="@drawable/button_tab_selected"
+                android:onClick="showCrowdingLevel"
+                android:textSize="28sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp" />
+            <Button
+                android:id="@+id/btnShowCrowdingLevelNotSelected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Crowding"
+                android:layout_toRightOf="@id/btnShowWaitTimeSelected"
+                android:textAllCaps="false"
+                android:theme="@style/TabButtonNotSelected"
+                android:background="@drawable/button_tab_unselected"
+                android:onClick="showCrowdingLevel"
+                android:textSize="28sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryText"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Last updated: "
+            android:id="@+id/lblLastUpdated"
+            android:layout_below="@+id/buttonsSection"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/link"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/event_details"
+            android:id="@+id/lblEventDetails"
+            android:layout_centerHorizontal="true"
+            android:onClick="eventDetails"
+            android:layout_below="@+id/lblLastUpdated"
+            android:layout_marginTop="20dp" />
+
+    </RelativeLayout>
+
+</ScrollView>

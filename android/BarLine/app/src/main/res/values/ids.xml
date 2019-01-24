@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="UNLOCKED_TAG" type="id" />
+    <item name="HEADER_TAG" type="id" />
+</resources>

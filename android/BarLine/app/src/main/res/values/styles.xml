@@ -1,0 +1,55 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textViewStyle">@style/TextViewStyle</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="TextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="NavBarButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@android:color/transparent</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+
+    <style name="MainButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+
+    <style name="TabButtonSelected" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@android:color/transparent</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+
+    <style name="TabButtonNotSelected" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@android:color/transparent</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppDialogThemeNoActionBar" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@color/backgroundColor</item>
+    </style>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="progressRed">#F44336</color>
+    <color name="progressYellow">#FFC107</color>
+    <color name="progressGreen">#4CAF50</color>
+
+    <color name="colorPrimary">#42526C</color>
+    <color name="colorPrimaryDark">#344152</color>
+    <color name="colorPrimaryLight">#777</color>
+    <color name="colorAccent">#2196F3</color>
+    <color name="colorAccentLight">#90CAF9</color>
+    <color name="primaryText">#fff</color>
+    <color name="secondaryText">#B6B6B6</color>
+    <color name="dividerColor">#777</color>
+    <color name="listViewSelectColor">#424242</color>
+    <color name="backgroundColor">#303030</color>
+</resources>

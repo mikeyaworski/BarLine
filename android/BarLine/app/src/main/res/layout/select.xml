@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.fluxuous.barline.SelectCity"
+    android:background="@color/backgroundColor">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/NavBarButton"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="15dp"
+            android:minWidth="0dp"
+            android:id="@+id/btnRefresh"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="refresh"
+            android:src="@mipmap/ic_action_refresh"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primaryText"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Select City"
+            android:id="@+id/lblTitle"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondaryText"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Ontario"
+            android:id="@+id/lblSubtitle"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/lblTitle"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/listViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="@color/dividerColor"
+            android:dividerHeight="2px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:id="@+id/loadingAnimation"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
